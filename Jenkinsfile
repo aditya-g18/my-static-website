@@ -8,12 +8,12 @@ pipeline {
         }
         stage('Build') {
             steps {
-                sh 'docker build -t my-static-website .'
+                powershell 'docker build -t my-static-website .'
             }
         }
         stage('Deploy') {
             steps {
-                sh 'docker run -d -p 80:80 my-static-website'
+                powershell 'docker run -d -p 80:80 my-static-website'
             }
         }
     }
